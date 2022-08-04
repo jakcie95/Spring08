@@ -18,12 +18,8 @@
 		${dto.imgName }
 		</a>
 		<br>
-		<a href="delete?file=${dto.imgName }&id=${dto.id}">
-			파일삭제
-		</a>&nbsp;
-		<a href="updateForm?id=${dto.id }&name=${dto.name}&file=${dto.imgName}">
-			파일수정
-		</a>
+		<a href="delete?file=${dto.imgName }&id=${dto.id}">파일삭제</a>
+		<a href="modify_form?id=${dto.id }">파일수정</a>
 		<hr>
 	</c:forEach>
 	<a href="form">업로드 이동</a>

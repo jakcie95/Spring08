@@ -53,21 +53,24 @@ public class FileController {
 		fs.delete(file, id);
 		return "redirect:views";
 	}
-	@GetMapping("updateForm")
-	public String updateForm(Model model,
-						String id, String name, String file) {
-		model.addAttribute("id", id);
-		model.addAttribute("name", name);
-		model.addAttribute("file", file);
-		System.out.println("id : "+id);
-		System.out.println("name : "+name);
-		System.out.println("file : "+file);
-		return "updateForm";
+	@GetMapping("modify_form")
+	public String modify_form(String id, Model model) {
+		fs.getOneData(id, model);
+		return "modify_form";
 	}
-	@PostMapping("update")
-	public String update(MultipartHttpServletRequest mul) {
-		fs.update(mul);
+	@PostMapping("modify")
+	public String modify(MultipartHttpServletRequest mul) {
+		fs.modify(mul);
 		return "redirect:views";
+	}
+	@GetMapping("form02")
+	public String form02() {
+		return "form02";
+	}
+	@PostMapping("upload2")
+	public String upload02(MultipartHttpServletRequest mul) {
+		fs.fileProcess02(mul);
+		return null;
 	}
 }
 

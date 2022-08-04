@@ -17,8 +17,19 @@
 	<delete id="delete">
 		delete from file_image where id=#{id}
 	</delete>
-	<update id="update">
-		update from file_image set id=#{id}, name=#{name}, img_name=#{imgName}
-								where id=#{id}
+	<select id="getOneData" resultMap="file">
+		select * from file_image where id=#{id}
+	</select>
+	<update id="modify">
+		update file_image set name=#{name},
+						img_name=#{imgName} where id=#{id}
 	</update>
 </mapper>
+
+
+
+
+
+
+
+

@@ -1,7 +1,5 @@
 package com.care.file.service;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -10,7 +8,9 @@ public interface FileService {
 	public void fileProcess(MultipartHttpServletRequest mul);
 	public void getData(Model model);
 	public void delete(String file, String id);
-	public void update(MultipartHttpServletRequest mul);
+	public void getOneData(String id, Model model);
+	public void modify(MultipartHttpServletRequest mul);
+	public void fileProcess02(MultipartHttpServletRequest mul);
 }
 
 
